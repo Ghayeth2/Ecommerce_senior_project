@@ -1,0 +1,66 @@
+2023-10-09T01:01:32.042+03:00  INFO 4808 --- [restartedMain] com.auction.app.AuctionApplication       : Starting AuctionApplication using Java 17.0.6 with PID 4808 (D:\Java\auction\auction\target\classes started by amalj in D:\Java\auction\auction)
+2023-10-09T01:01:32.045+03:00  INFO 4808 --- [restartedMain] com.auction.app.AuctionApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-09T01:01:32.101+03:00  INFO 4808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-09T01:01:32.102+03:00  INFO 4808 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-09T01:01:32.787+03:00  INFO 4808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-09T01:01:32.802+03:00  INFO 4808 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2023-10-09T01:01:33.185+03:00  INFO 4808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-09T01:01:33.192+03:00  INFO 4808 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-09T01:01:33.192+03:00  INFO 4808 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-09T01:01:33.236+03:00  INFO 4808 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-09T01:01:33.236+03:00  INFO 4808 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1132 ms
+2023-10-09T01:01:33.406+03:00  INFO 4808 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-09T01:01:33.439+03:00  INFO 4808 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-09T01:01:33.441+03:00  INFO 4808 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-09T01:01:33.524+03:00  INFO 4808 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-09T01:01:33.632+03:00  INFO 4808 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-09T01:01:33.646+03:00  INFO 4808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-09T01:01:33.772+03:00  INFO 4808 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53ccd730
+2023-10-09T01:01:33.774+03:00  INFO 4808 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-09T01:01:33.900+03:00  INFO 4808 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-09T01:01:34.049+03:00  INFO 4808 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-09T01:01:34.055+03:00  INFO 4808 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-09T01:01:34.095+03:00  WARN 4808 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-09T01:01:34.467+03:00  INFO 4808 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-09T01:01:34.471+03:00  INFO 4808 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-09T01:01:34.537+03:00  INFO 4808 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-09T01:01:34.551+03:00  INFO 4808 --- [restartedMain] com.auction.app.AuctionApplication       : Started AuctionApplication in 2.888 seconds (process running for 3.574)
+2023-10-09T01:01:34.934+03:00  INFO 4808 --- [RMI TCP Connection(4)-192.168.1.105] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-09T01:01:34.934+03:00  INFO 4808 --- [RMI TCP Connection(4)-192.168.1.105] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-09T01:01:34.935+03:00  INFO 4808 --- [RMI TCP Connection(4)-192.168.1.105] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-09T01:02:08.158+03:00  INFO 4808 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-09T01:02:08.161+03:00  INFO 4808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-09T01:02:08.167+03:00  INFO 4808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-09T02:48:31.759+03:00  INFO 7076 --- [restartedMain] com.auction.app.AuctionApplication       : Starting AuctionApplication using Java 17.0.6 with PID 7076 (D:\Java\auction\auction\target\classes started by amalj in D:\Java\auction\auction)
+2023-10-09T02:48:31.761+03:00  INFO 7076 --- [restartedMain] com.auction.app.AuctionApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-10-09T02:48:31.827+03:00  INFO 7076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-09T02:48:31.827+03:00  INFO 7076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-09T02:48:32.510+03:00  INFO 7076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-09T02:48:32.568+03:00  INFO 7076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interfaces.
+2023-10-09T02:48:32.950+03:00  INFO 7076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-09T02:48:32.956+03:00  INFO 7076 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-09T02:48:32.956+03:00  INFO 7076 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-09T02:48:33.006+03:00  INFO 7076 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-09T02:48:33.007+03:00  INFO 7076 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1179 ms
+2023-10-09T02:48:33.163+03:00  INFO 7076 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-09T02:48:33.195+03:00  INFO 7076 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-09T02:48:33.197+03:00  INFO 7076 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-09T02:48:33.276+03:00  INFO 7076 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-09T02:48:33.374+03:00  INFO 7076 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-09T02:48:33.390+03:00  INFO 7076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-09T02:48:33.502+03:00  INFO 7076 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f5ee11b
+2023-10-09T02:48:33.505+03:00  INFO 7076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-09T02:48:33.697+03:00  INFO 7076 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-09T02:48:34.116+03:00  INFO 7076 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-09T02:48:34.216+03:00  INFO 7076 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-09T02:48:34.449+03:00  WARN 7076 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-09T02:48:34.799+03:00  INFO 7076 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-09T02:48:34.803+03:00  INFO 7076 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-09T02:48:34.859+03:00  INFO 7076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-09T02:48:34.870+03:00  INFO 7076 --- [restartedMain] com.auction.app.AuctionApplication       : Started AuctionApplication in 3.485 seconds (process running for 4.117)
+2023-10-09T02:48:35.042+03:00  INFO 7076 --- [RMI TCP Connection(2)-192.168.1.105] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-09T02:48:35.042+03:00  INFO 7076 --- [RMI TCP Connection(2)-192.168.1.105] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-09T02:48:35.045+03:00  INFO 7076 --- [RMI TCP Connection(2)-192.168.1.105] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-09T02:58:54.924+03:00  INFO 7076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-09T02:58:54.940+03:00  INFO 7076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-09T02:58:54.951+03:00  INFO 7076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
