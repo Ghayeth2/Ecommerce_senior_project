@@ -5,14 +5,16 @@ import com.auction.app.service.abstracts.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3001")
 @RestController
-@RequestMapping("/spark/api")
+@RequestMapping("/api-rest/user")
 public class UserController {
     private UserService userService;//
 
@@ -22,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<User>> users(){
-        return new ResponseEntity<>(userService.users(), HttpStatus.OK);
+    public ResponseEntity<List<User>> users() {
+        return null;
     }
 }
