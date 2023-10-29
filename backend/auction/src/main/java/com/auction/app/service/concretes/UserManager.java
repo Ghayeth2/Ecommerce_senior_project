@@ -31,7 +31,7 @@ public class UserManager implements UserService {
     @Override
     public DataResult<List<UserDto>> users() {
         // Adding extra check to see if there are any record or not
-        Optional<List<User>> usersOps = userDao.findAllU();
+        Optional<List<User>> usersOps = Optional.ofNullable(userDao.findAll());
 
         if(usersOps.isPresent()){
             return new DataResult<>(usersOps.get().stream().
@@ -45,8 +45,9 @@ public class UserManager implements UserService {
                         return userDto;
                     }).collect(Collectors.toList())
             );
-        }else
-            return new FailureDataResult<>("No data was found!");// or else throw exception notifying no users were found.
+        }else // In coming days, replace it with Exceptions along with Handling all
+            // When adding exceptions MAKE USE OF STATIC HTTP STATUS
+            return new FailureDataResult<>("No data was found!", null);// or else throw exception notifying no users were found.
 
     }
 
@@ -65,12 +66,14 @@ public class UserManager implements UserService {
             user.get().setPassword(passwordEncoderBean.passwordEncoder().encode(password));
             return new SuccessDataResult<>(userDao.save(user.get()),
                     "Password is resat.");
-        }else
+        }else// In coming days, replace it with Exceptions along with Handling all
+            // When adding exceptions MAKE USE OF STATIC HTTP STATUS
             return new FailureResult("No user was found!");
     }
 
     @Override
     public Result update(UserDto userDto, Long id) {
+        // Check if fields are empty or not// maybe is done from @Validate
         User user = (User) converter.dtoToEntity(userDto, new User());
         user.setId(id);
         return new SuccessDataResult<>(userDao.save(user), "" +
@@ -93,6 +96,7 @@ public class UserManager implements UserService {
                     user, new UserDto()
             ));
         }else // update exception & exception handling
+            // When adding exceptions MAKE USE OF STATIC HTTP STATUS
             return new FailureDataResult<>("No data was found!");
     }
 
@@ -100,10 +104,11 @@ public class UserManager implements UserService {
     public DataResult<UserDto> findUserById(Long id) {
         Optional<User> user = userDao.findUserById(id);
         if(user.isPresent()){
-            return new DataResult<>((UserDto) converter.entityToDto(
+            return new SuccessDataResult<>((UserDto) converter.entityToDto(
                     user, new UserDto()
             ));
-        }else
+        }else// In coming days, replace it with Exceptions along with Handling all
+            // When adding exceptions MAKE USE OF STATIC HTTP STATUS
             return new FailureDataResult<>("No data was found!");
     }
 }

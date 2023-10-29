@@ -7,7 +7,11 @@ import com.auction.app.model.dtos.UserDtoRegistration;
 import com.auction.app.model.entities.User;
 
 import java.util.List;
-
+/*
+        Throwing exceptions & Handling Exceptions must be
+        in Lower Layers (NOT IN CONTROLLERS)
+        Meaning: Within Service & Exception & ExceptionAdvisors Layers
+ */
 public interface UserService {
     DataResult<List<UserDto>> users();
     Result save(UserDtoRegistration userDto);
