@@ -35,12 +35,12 @@ public class UserController {
     public ResponseEntity<?> save(@Valid @RequestBody UserDtoRegistration userDto){
         return new ResponseEntity<>(userService.save(userDto), HttpStatus.CREATED);
     }
-
+    // Still not working
     @GetMapping("/id/{id}") // if there's no user // Exception >> Activate advisor
     public ResponseEntity<DataResult<UserDto>> findUserById(@PathVariable("id") Long id){
         return new ResponseEntity<>(userService.findUserById(id), HttpStatus.OK);
     }
-
+    // Still not working
     @GetMapping("/email/{email}")
     public ResponseEntity<DataResult<UserDto>> findUserByEmail(@PathVariable("email") String email){
         return new ResponseEntity<>(userService.findUserByEmail(email), HttpStatus.OK);
