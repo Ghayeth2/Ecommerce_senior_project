@@ -22,5 +22,6 @@ public class UserDto {
     @NotBlank(message = "Email is required!")
     private String email;
     private String phoneNumber;
+    @NotBlank(message = "Password confirmation is required to update your info!!")
     private String password;
 }
