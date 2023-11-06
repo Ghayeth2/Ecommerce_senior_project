@@ -20,8 +20,6 @@ public class ValidationExceptionAdvisor {
     public DataResult<Object> handleValidationException
             (MethodArgumentNotValidException exceptions){
         Map<String ,String > validationErrors = new HashMap<>();
-//        for(FieldError fieldError : exceptions.getBindingResult().getFieldErrors())
-//            validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
         exceptions.getBindingResult().getFieldErrors().stream().map(fieldError -> {
             validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
             return validationErrors;

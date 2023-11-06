@@ -19,6 +19,10 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // After completing security section this will get activate
+    // galleries addresses kullanarak
+
+
 //    @CreatedBy
 //    private String createdBy;
 //    @CreatedDate
