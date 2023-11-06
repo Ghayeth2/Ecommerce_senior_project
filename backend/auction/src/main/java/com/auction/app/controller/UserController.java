@@ -32,7 +32,6 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    @ResponseBody
     public ResponseEntity<?> save(@Valid @RequestBody UserDtoRegistration userDto){
         return new ResponseEntity<>(userService.save(userDto), HttpStatus.CREATED);
     }
@@ -43,7 +42,7 @@ public class UserController {
     }
     // Still not working
     @GetMapping("/email/{email}")
-    public ResponseEntity<DataResult<UserDto>> findUserByEmail(@PathVariable("email") String email){
+    public ResponseEntity<DataResult<UserDto>> findUserByEmail(@RequestParam("email") String email){
         return new ResponseEntity<>(userService.findUserByEmail(email), HttpStatus.OK);
     }
 

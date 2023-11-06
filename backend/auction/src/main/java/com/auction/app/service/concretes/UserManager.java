@@ -66,6 +66,7 @@ public class UserManager implements UserService {
 
     @Override
     public Result resetPassword(Long id, String password) {
+
         Optional<User> user = userDao.findUserById(id);
         if(user.isPresent()){
             user.get().setId(id);
@@ -125,10 +126,13 @@ public class UserManager implements UserService {
     @Override
     public DataResult<UserDto> findUserById(Long id) {
         Optional<User> user = userDao.findUserById(id);
+        User user1 = null;
         if(user.isPresent()){
+            log.info(user.get().getFirstName()+" "+user.get().getLastName());
+            user1 = user.get();
             return new SuccessDataResult<>((UserDto) converter.entityToDto(
-                    user, new UserDto()
-            ));
+                    user.get(), new UserDto()
+            ), "Success");
         }else// In coming days, replace it with Exceptions along with Handling all
             // When adding exceptions MAKE USE OF STATIC HTTP STATUS
             return new FailureDataResult<>("No data was found!");
