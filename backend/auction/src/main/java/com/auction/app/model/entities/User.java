@@ -1,6 +1,8 @@
 package com.auction.app.model.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -12,9 +14,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.List;
+
 @Entity @Data @Builder
 @NoArgsConstructor
 @Table(name = "users")
+@AllArgsConstructor
 public class User extends BaseEntity {
     @NotEmpty @NotNull @Length(max = 30,
     message = "Length should not exceed 30 characters")
@@ -25,15 +30,11 @@ public class User extends BaseEntity {
     @NotNull @NotEmpty
     @Email
     private String email;
-//    @NotNull @NotEmpty @NotBlank
+
     private String password;
     private String phoneNumber;
 
-    public User(String firstName, String lastName, String email, String password, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Address> addresses;
+
 }
