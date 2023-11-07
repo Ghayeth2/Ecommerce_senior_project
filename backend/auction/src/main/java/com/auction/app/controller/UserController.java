@@ -8,6 +8,7 @@ import com.auction.app.model.entities.User;
 import com.auction.app.service.abstracts.UserService;
 import jakarta.validation.Valid;
 import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3001")
 @RestController
+@Log4j2
 @RequestMapping("/api-rest/user")
 public class UserController {
     private UserService userService;//  Is it needed to have Bulk Operations 4 (save, update & delete) ?
@@ -41,8 +43,9 @@ public class UserController {
         return new ResponseEntity<>(userService.findUserById(id), HttpStatus.OK);
     }
     // Still not working
-    @GetMapping("/email/{email}")
+    @GetMapping("/search")
     public ResponseEntity<DataResult<UserDto>> findUserByEmail(@RequestParam("email") String email){
+        log.info(email);
         return new ResponseEntity<>(userService.findUserByEmail(email), HttpStatus.OK);
     }
 

@@ -113,10 +113,12 @@ public class UserManager implements UserService {
 
     @Override
     public DataResult<UserDto> findUserByEmail(String email) {
+        log.info("email service 1 "+email);
         Optional<User> user = userDao.findUserByEmail(email);
+        log.info(user.get());
         if(user.isPresent()){
-            return new DataResult<>((UserDto) converter.entityToDto(
-                    user, new UserDto()
+            return new SuccessDataResult<>((UserDto) converter.entityToDto(
+                    user.get(), new UserDto()
             ));
         }else // update exception & exception handling
             // When adding exceptions MAKE USE OF STATIC HTTP STATUS
@@ -128,11 +130,9 @@ public class UserManager implements UserService {
         Optional<User> user = userDao.findUserById(id);
         User user1 = null;
         if(user.isPresent()){
-            log.info(user.get().getFirstName()+" "+user.get().getLastName());
-            user1 = user.get();
             return new SuccessDataResult<>((UserDto) converter.entityToDto(
                     user.get(), new UserDto()
-            ), "Success");
+            ));
         }else// In coming days, replace it with Exceptions along with Handling all
             // When adding exceptions MAKE USE OF STATIC HTTP STATUS
             return new FailureDataResult<>("No data was found!");
