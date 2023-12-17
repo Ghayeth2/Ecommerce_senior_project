@@ -1,0 +1,120 @@
+import React from 'react'
+
+export default function SideBar() {
+  return (
+    <div>
+        
+ {/* <!-- BEGIN SIDEBAR & CONTENT --> */}
+        <div className="row margin-bottom-40 ">
+          {/* <!-- BEGIN SIDEBAR --> */}
+          <div className="sidebar col-md-3 col-sm-4">
+            <ul className="list-group margin-bottom-25 sidebar-menu">
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Ladies</a></li>
+              <li className="list-group-item clearfix dropdown">
+                <a href="shop-product-list.html">
+                  <i className="fa fa-angle-right"></i>
+                  Mens
+                  
+                </a>
+                <ul className="dropdown-menu">
+                  <li className="list-group-item dropdown clearfix">
+                    <a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Shoes </a>
+                      <ul className="dropdown-menu">
+                        <li className="list-group-item dropdown clearfix">
+                          <a href="shop-product-list.html"><i className="fa fa-angle-right"></i> classNameic </a>
+                          <ul className="dropdown-menu">
+                            <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> classNameic 1</a></li>
+                            <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> classNameic 2</a></li>
+                          </ul>
+                        </li>
+                        <li className="list-group-item dropdown clearfix">
+                          <a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Sport  </a>
+                          <ul className="dropdown-menu">
+                            <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Sport 1</a></li>
+                            <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Sport 2</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                  </li>
+                  <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Trainers</a></li>
+                  <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Jeans</a></li>
+                  <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Chinos</a></li>
+                  <li><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> T-Shirts</a></li>
+                </ul>
+              </li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Kids</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Accessories</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Sports</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Brands</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Electronics</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Home & Garden</a></li>
+              <li className="list-group-item clearfix"><a href="shop-product-list.html"><i className="fa fa-angle-right"></i> Custom Link</a></li>
+            </ul>
+          </div>
+          {/* <!-- END SIDEBAR --> */}
+          {/* <!-- BEGIN CONTENT --> */}
+          <div className="col-md-9 col-sm-8">
+            <h2>Three items</h2>
+            <div classname="owl-carousel owl-carousel3">
+              <div>
+              <div className="col-md-4">
+                <div className="product-item">
+                  <div className="pi-img-wrapper">
+                    <img src="assets/pages/img/products/k1.jpg" className="img-responsive" alt="Berry Lace Dress"/>
+                    <div>
+                      <a href="assets/pages/img/products/k1.jpg" className="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" className="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div className="pi-price">$29.00</div>
+                  <a href="javascript:;" className="btn btn-default add2cart">Add to cart</a>
+                  <div className="sticker sticker-new"></div>
+                </div>
+                </div>
+              </div>
+              <div>
+              <div className="col-md-4">
+                <div className="product-item">
+                  <div className="pi-img-wrapper">
+                    <img src="assets/pages/img/products/k2.jpg" className="img-responsive" alt="Berry Lace Dress"/>
+                    <div>
+                      <a href="assets/pages/img/products/k2.jpg" className="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" className="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
+                  <div className="pi-price">$29.00</div>
+                  <a href="javascript:;" className="btn btn-default add2cart">Add to cart</a>
+                </div>
+                </div>
+              </div>
+              <div>
+              <div className="col-md-4">
+                <div className="product-item">
+                  <div className="pi-img-wrapper">
+                    <img src="assets/pages/img/products/k3.jpg" className="img-responsive" alt="Berry Lace Dress"/>
+                    <div>
+                      <a href="assets/pages/img/products/k3.jpg" className="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" className="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
+                  <div className="pi-price">$29.00</div>
+                  <a href="javascript:;" className="btn btn-default add2cart">Add to cart</a>
+                </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          {/* <!-- END CONTENT --> */}
+        </div>
+        {/* <!-- END SIDEBAR & CONTENT --> */}
+
+
+
+    </div>
+  )
+}
+

@@ -1,73 +1,49 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function () {
+export default function Topbar() {
   return (
     <div>
-
-{/* <!-- Topbar Start --> */}
-    <div class="container-fluid">
-        <div class="row bg-secondary py-2 px-xl-5">
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-dark" href="">FAQs</a>
-                    <span class="text-muted px-2">|</span>
-                    <a class="text-dark" href="">Help</a>
-                    <span class="text-muted px-2">|</span>
-                    <a class="text-dark" href="">Support</a>
+        <div className="pre-header">
+        <div className="container">
+            <div className="row">
+                {/* <!-- BEGIN TOP BAR LEFT PART --> */}
+                <div className="col-md-6 col-sm-6 additional-shop-info">
+                    <ul className="list-unstyled list-inline">
+                        <li><i className="fa fa-phone"></i><span>+1 456 6717</span></li>
+                        {/* <!-- BEGIN CURRENCIES --> */}
+                        <li className="shop-currencies">
+                            <a href="javascript:void(0);">€</a>
+                            <a href="javascript:void(0);">£</a>
+                            <a href="javascript:void(0);" className="current">$</a>
+                        </li>
+                        {/* <!-- END CURRENCIES --> */}
+                        {/* <!-- BEGIN LANGS --> */}
+                        <li className="langs-block">
+                            <a href="javascript:void(0);" className="current">English </a>
+                            <div className="langs-block-others-wrapper"><div className="langs-block-others">
+                              <a href="javascript:void(0);">French</a>
+                              <a href="javascript:void(0);">Germany</a>
+                              <a href="javascript:void(0);">Turkish</a>
+                            </div></div>
+                        </li>
+                        {/* <!-- END LANGS --> */}
+                    </ul>
                 </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-dark pl-2" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                {/* <!-- END TOP BAR LEFT PART --> */}
+                {/* <!-- BEGIN TOP BAR MENU --> */}
+                <div className="col-md-6 col-sm-6 additional-nav">
+                    <ul className="list-unstyled list-inline pull-right">
+                        <li><Link to="/My_Account ">My Account </Link></li>
+                        <li><Link to="/My_Wishlist">My Wishlist</Link></li>
+                        <li><Link to="/Checkout ">Checkout</Link></li>
+                        <li><Link to="/Login">Login</Link></li>
+                    </ul>
                 </div>
+                {/* <!-- END TOP BAR MENU --> */}
             </div>
-        </div>
-        <div class="row align-items-center py-3 px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
-                </a>
-            </div>
-            <div class="col-lg-6 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products"/>
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-            </div>
-        </div>
+        </div>        
     </div>
-    {/* <!-- Topbar End --> */}
-
     </div>
   )
 }
