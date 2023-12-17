@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3001")
+//@CrossOrigin(origins = "http://localhost:3001")
 @RestController
-@Log4j2
 @RequestMapping("/api-rest/user")
 public class UserController {
     private UserService userService;//  Is it needed to have Bulk Operations 4 (save, update & delete) ?
@@ -45,7 +44,6 @@ public class UserController {
     // Still not working
     @GetMapping("/search")
     public ResponseEntity<DataResult<UserDto>> findUserByEmail(@RequestParam("email") String email){
-        log.info(email);
         return new ResponseEntity<>(userService.findUserByEmail(email), HttpStatus.OK);
     }
 
