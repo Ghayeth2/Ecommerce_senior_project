@@ -21,7 +21,7 @@ public abstract class BaseEntity implements Serializable {
     private Long id;
 
     // After completing security section this will get activate
-    // galleries addresses kullanarak
+
 
 
 //    @CreatedBy
@@ -33,3 +33,4 @@ public abstract class BaseEntity implements Serializable {
 //    @LastModifiedDate
 //    private Date updatedDate;
 }
+// galleries addresses kullanarak
