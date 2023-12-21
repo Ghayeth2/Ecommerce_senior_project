@@ -2,17 +2,22 @@ package com.auction.app.service.concretes;
 
 import com.auction.app.core.bean.BCryptPasswordEncoderBean;
 import com.auction.app.core.bean.PasswordEncoderBean;
+import com.auction.app.core.exceptions.AppException;
 import com.auction.app.core.utils.converter.DtoEntityConverter;
 import com.auction.app.core.utils.results.*;
 import com.auction.app.dao.UserDao;
+import com.auction.app.model.dtos.CredentialsDto;
 import com.auction.app.model.dtos.UserDto;
 import com.auction.app.model.dtos.UserDtoRegistration;
 import com.auction.app.model.entities.User;
 import com.auction.app.service.abstracts.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
+import java.nio.CharBuffer;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -35,12 +40,12 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public DataResult<List<UserDto>> users() {
+    public List<UserDto> users() {
         // Adding extra check to see if there are any record or not
         Optional<List<User>> usersOps = Optional.ofNullable(userDao.findAll());
 
         if(usersOps.isPresent()){
-            return new DataResult<>(usersOps.get().stream().
+            return usersOps.get().stream().
                     map(user -> {
                         UserDto userDto = UserDto.builder()
                                 .firstName(user.getFirstName())
@@ -49,11 +54,10 @@ public class UserManager implements UserService {
                                 .phoneNumber(user.getPhoneNumber())
                                 .build();
                         return userDto;
-                    }).collect(Collectors.toList())
-            );
+                    }).collect(Collectors.toList());
         }else // In coming days, replace it with Exceptions along with Handling all
             // When adding exceptions MAKE USE OF STATIC HTTP STATUS
-            return new FailureDataResult<>("No data was found!", null);// or else throw exception notifying no users were found.
+            return null;// or else throw exception notifying no users were found.
 
     }
 
@@ -95,6 +99,17 @@ public class UserManager implements UserService {
             return new FailureResult("Passwords do not match, please enter current password.");
     }
 
+    @Override
+    public UserDto login(CredentialsDto credentialsDto) {
+        Optional<User> user = userDao.findUserByEmail(credentialsDto.getEmail());
+        if(user.isEmpty())
+            throw new AppException("Unknown user", HttpStatus.NOT_FOUND);
+        if (isPasswordMatching(user.get().getPassword(), credentialsDto.getPassword()))
+            return (UserDto) converter.entityToDto(user.get(), new UserDto());
+        else
+            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
+    }
+
     private boolean isPasswordMatching(String rawPassword, String encodedPassword){
         if (!encodedPassword.isEmpty()){
             // matches(rawPassword, encodedPassword) returns either (true > passwords match, false > passwords mismatch)
@@ -112,17 +127,13 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public DataResult<UserDto> findUserByEmail(String email) {
-        log.info("email service 1 "+email);
-        Optional<User> user = userDao.findUserByEmail(email);
-        log.info(user.get());
-        if(user.isPresent()){
-            return new SuccessDataResult<>((UserDto) converter.entityToDto(
-                    user.get(), new UserDto()
-            ));
-        }else // update exception & exception handling
-            // When adding exceptions MAKE USE OF STATIC HTTP STATUS
-            return new FailureDataResult<>("No data was found!");
+    public UserDto findUserByEmail(String email) {
+       Optional<User> user = userDao.findUserByEmail(email);
+       if(user.isEmpty())
+           throw new AppException("Unknown user", HttpStatus.NOT_FOUND);
+       return (UserDto) converter.entityToDto(user.get(), new UserDto());
+
+
     }
 
     @Override

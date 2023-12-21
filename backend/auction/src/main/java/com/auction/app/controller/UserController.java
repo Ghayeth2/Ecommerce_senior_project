@@ -18,7 +18,7 @@ import java.util.List;
 
 //@CrossOrigin(origins = "http://localhost:3001")
 @RestController
-@RequestMapping("/api-rest/user")
+@RequestMapping("/app/user")
 public class UserController {
     private UserService userService;//  Is it needed to have Bulk Operations 4 (save, update & delete) ?
 
@@ -28,11 +28,11 @@ public class UserController {
     }
 
     @GetMapping("")
-    public ResponseEntity<DataResult<List<UserDto>>> users() {
+    public ResponseEntity<List<UserDto>> users() {
         return new ResponseEntity<>(userService.users(), HttpStatus.OK);
     }
 
-    @PostMapping("/save")
+    @PostMapping("")
     public ResponseEntity<?> save(@Valid @RequestBody UserDtoRegistration userDto){
         return new ResponseEntity<>(userService.save(userDto), HttpStatus.CREATED);
     }
@@ -43,7 +43,7 @@ public class UserController {
     }
     // Still not working
     @GetMapping("/search")
-    public ResponseEntity<DataResult<UserDto>> findUserByEmail(@RequestParam("email") String email){
+    public ResponseEntity<UserDto> findUserByEmail(@RequestParam("email") String email){
         return new ResponseEntity<>(userService.findUserByEmail(email), HttpStatus.OK);
     }
 
