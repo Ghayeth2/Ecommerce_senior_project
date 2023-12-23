@@ -11,7 +11,7 @@ import org.hibernate.validator.constraints.Length;
 @Data @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserDtoRegistration {
+public class UserFormDto {
     @NotBlank(message = "First name is required!")
     @Length(max = 30, message = "First name should not exceed 30 character")
     private String firstName;
