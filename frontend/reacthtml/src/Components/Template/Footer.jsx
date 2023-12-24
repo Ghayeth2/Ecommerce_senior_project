@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
           {/* <!-- END SOCIAL ICONS /--> */}
           {/* <!-- BEGIN NEWLETTER --> */}
-          <div class="col-md-6 col-sm-6">
+          <div class="col-md-5 col-sm-5">
             <div class="pre-footer-subscribe-box pull-right">
               <h2>Newsletter</h2>
               <form action="#">
