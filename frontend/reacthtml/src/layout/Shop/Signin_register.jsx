@@ -24,11 +24,11 @@ export default class Signin_register extends React.Component {
     };
   }
 
-  onChangeHandler = (event) => {
-    let name = event.target.name;
-    let value = event.target.value;
-    this.setState({[name]: value});
-  };
+  // onChangeHandler = (event) => {
+  //   let name = event.target.name;
+  //   let value = event.target.value;
+  //   this.setState({[name]: value});
+  // };
 
   onSubmitLogin = (e) => {
     this.state.onLogin(e,
@@ -73,16 +73,16 @@ export default class Signin_register extends React.Component {
             <div class="container">
               <Topbar />
               <Header />
-              {this.state.users.map(user => (
-                <UsersComponent id = {user.id} firstName = {user.firstName}
-                lastName = {user.lastName} email = {user.email} phoneNumber = {user.phoneNumber} ></UsersComponent>
-              ))}
+              {/*{this.state.users.map(user => (*/}
+              {/*  <UsersComponent id = {user.id} firstName = {user.firstName}*/}
+              {/*  lastName = {user.lastName} email = {user.email} phoneNumber = {user.phoneNumber} ></UsersComponent>*/}
+              {/*))}*/}
               <div className="container">
                 <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
                   <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email'/>
                   <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password'/>
                   <div className="d-flex justify-content-between mx-3 mb-4">
-                    <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
+                    <MDBCheckbox  value='' id='flexCheckDefault'  />
                     <a href="!#">Forgot password?</a>
                   </div>
                   <MDBBtn className="mb-4">Sign in</MDBBtn>
