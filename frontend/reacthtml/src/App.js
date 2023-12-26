@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import Home from './layout/Shop/Home';
 import Signin_register from './layout/Shop/Signin_register';
-import {BrowserRouter, Switch, Route, Routes} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import Register from './layout/Shop/Register';
 import Profile from "./Components/User/Profile";
 import Products from "./layout/Shop/Products";
@@ -24,5 +24,5 @@ export default function App() {
 
             {/*<Products/>*/}
         </div>
-    )
+    );
 }

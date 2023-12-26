@@ -2,7 +2,7 @@ import {request} from '../axios_helper';
 
 class UserServices {
 
-    getUsers(){
+    getUsers() {
         return request('GET', '/app/user', {})
             .then(response => response.data)
             .catch(error => {
