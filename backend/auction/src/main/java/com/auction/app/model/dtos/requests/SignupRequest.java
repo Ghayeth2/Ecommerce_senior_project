@@ -1,4 +1,4 @@
-package com.auction.app.model.dtos;
+package com.auction.app.model.dtos.requests;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,10 +8,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.List;
+import java.util.Set;
+
 @Data @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserFormDto {
+public class SignupRequest {
     @NotBlank(message = "First name is required!")
     @Length(max = 30, message = "First name should not exceed 30 character")
     private String firstName;
@@ -24,4 +27,5 @@ public class UserFormDto {
     private String phoneNumber;
     @NotBlank(message = "Password field is required!")
     private String password;
+    private List<String> roles;
 }

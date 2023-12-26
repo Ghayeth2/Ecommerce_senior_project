@@ -5,14 +5,14 @@ import com.auction.app.core.bean.PasswordEncoderBean;
 import com.auction.app.core.exceptions.AppException;
 import com.auction.app.core.utils.converter.DtoEntityConverter;
 import com.auction.app.dao.UserDao;
-import com.auction.app.model.dtos.LoginDto;
 import com.auction.app.model.dtos.UserDto;
-import com.auction.app.model.dtos.UserFormDto;
+import com.auction.app.model.dtos.requests.SignupRequest;
 import com.auction.app.model.entities.User;
 import com.auction.app.service.abstracts.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -59,14 +59,14 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public UserDto register(UserFormDto userDto) {
+    public ResponseEntity<String >  register(SignupRequest userDto) {
         Optional<User> usr = userDao.findUserByEmail(userDto.getEmail());
         if(usr.isPresent())
             throw new AppException("User already exists", HttpStatus.BAD_REQUEST);
         User user = (User) converter.dtoToEntity(userDto, new User());
         user.setPassword(passwordEncoderBean.passwordEncoder().encode(userDto.getPassword()));
         userDao.save(user);
-        return (UserDto) converter.entityToDto(user, new UserDto());
+        return new ResponseEntity<>("User successfully registered ", HttpStatus.CREATED);
     }
 
     @Override
@@ -83,7 +83,7 @@ public class UserManager implements UserService {
     }
 
     @Override
-    public UserDto update(UserFormDto userDto, Long id) {
+    public UserDto update(SignupRequest userDto, Long id) {
         // Check if fields are empty or not// maybe is done from @Validate
         Optional<User> opUser = userDao.findUserById(id);
         User user = null;
@@ -103,17 +103,6 @@ public class UserManager implements UserService {
                 .phoneNumber(userDto.getPhoneNumber())
                 .id(user.getId())
                 .build();
-    }
-
-    @Override
-    public UserDto login(LoginDto loginDto) {
-        Optional<User> user = userDao.findUserByEmail(loginDto.getEmail());
-        if(user.isEmpty())
-            throw new AppException("Unknown user", HttpStatus.NOT_FOUND);
-        if (isPasswordMatching(user.get().getPassword(), loginDto.getPassword()))
-            return (UserDto) converter.entityToDto(user.get(), new UserDto());
-        else
-            throw new AppException("Invalid password", HttpStatus.BAD_REQUEST);
     }
 
     private boolean isPasswordMatching(String rawPassword, String encodedPassword){

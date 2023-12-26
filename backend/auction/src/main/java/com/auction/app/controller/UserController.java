@@ -1,7 +1,7 @@
 package com.auction.app.controller;
 
 import com.auction.app.model.dtos.UserDto;
-import com.auction.app.model.dtos.UserFormDto;
+import com.auction.app.model.dtos.requests.SignupRequest;
 import com.auction.app.service.abstracts.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +24,15 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("")
+    @GetMapping("/users")
     public ResponseEntity<List<UserDto>> users() {
         return new ResponseEntity<>(userService.users(), HttpStatus.OK);
     }
 
     @PostMapping("")
-    public ResponseEntity<?> register(@Valid @RequestBody UserFormDto userDto){
-        UserDto user = userService.register(userDto);
-        return ResponseEntity.created(URI.create("/users/" +
-                user.getId())).body(user);
+    public ResponseEntity<?> register(@Valid @RequestBody SignupRequest userDto){
+        userService.register(userDto);
+        return ResponseEntity.ok("ok");
     }
     // Still not working
     @GetMapping("/id/{id}") // if there's no user // Exception >> Activate advisor
@@ -47,7 +46,7 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@Valid @RequestBody UserFormDto userDto, @PathVariable("id")Long id){
+    public ResponseEntity<?> update(@Valid @RequestBody SignupRequest userDto, @PathVariable("id")Long id){
         userService.update(userDto, id);
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
