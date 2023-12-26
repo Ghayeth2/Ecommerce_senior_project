@@ -5,6 +5,7 @@ import Signin_register from './layout/Shop/Signin_register';
 import {BrowserRouter, Switch, Route, Routes} from 'react-router-dom';
 import Register from './layout/Shop/Register';
 import Profile from "./Components/User/Profile";
+import Products from "./layout/Shop/Products";
 
 export default function App() {
     return (
@@ -18,7 +19,10 @@ export default function App() {
                 <Route path="/Login page" element={<Signin_register/>}/>
                 <Route path="/users/:id" element={<Profile />}/>
 
+                <Route path="/products" element={<Products />}/>
             </Routes>
+
+            {/*<Products/>*/}
         </div>
     )
 }

@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 // const { id, firstName, lastName, email, phoneNumber } = props
 // return ( ... )
 //} export default UserCompoenent;
+// edit by mistake
 class UsersComponent extends Component {
     constructor(props) {
         super(props);

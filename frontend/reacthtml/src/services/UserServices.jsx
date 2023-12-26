@@ -10,6 +10,10 @@ class UserServices {
                 throw error;
             });
     };
+
+    saveUser(user) {
+        return request('POST', '/app/user', user);
+    }
 }
 
 export default new UserServices();
