@@ -1,8 +1,8 @@
 package com.auction.app.service.abstracts;
 
-import com.auction.app.model.dtos.LoginDto;
 import com.auction.app.model.dtos.UserDto;
-import com.auction.app.model.dtos.UserFormDto;
+import com.auction.app.model.dtos.requests.SignupRequest;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 /*
@@ -12,10 +12,9 @@ import java.util.List;
  */
 public interface UserService {
     List<UserDto> users();
-    UserDto register(UserFormDto userDto);
+    ResponseEntity<String > register(SignupRequest userDto);
     void resetPassword(Long id, String password);
-    UserDto update(UserFormDto userDto, Long id);
-    UserDto login(LoginDto loginDto);
+    UserDto update(SignupRequest userDto, Long id);
     void delete(Long id);
     UserDto findUserByEmail(String email);
     UserDto findUserById(Long id);
