@@ -139,10 +139,8 @@ class Products extends Component {
 
                                     <div>
                                         <li>
-
                                         </li>
                                     </div>
-
 
                                 </div>
                                 <div className="col-md-3">
@@ -522,5 +520,4 @@ class Products extends Component {
         );
     }
 }
-
 export default Products;

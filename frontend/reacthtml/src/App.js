@@ -6,6 +6,7 @@ import { Route, Routes} from 'react-router-dom';
 import Register from './layout/Shop/Register';
 import Profile from "./Components/User/Profile";
 import Products from "./layout/Shop/Products";
+import Accoount_page from "./layout/Shop/Accoount_page";
 
 export default function App() {
     return (
@@ -18,8 +19,8 @@ export default function App() {
                 <Route path="/Register" element={<Register/>}/>
                 <Route path="/Login page" element={<Signin_register/>}/>
                 <Route path="/users/:id" element={<Profile />}/>
-
                 <Route path="/products" element={<Products />}/>
+                <Route path="/My_Account" element={<Accoount_page/>}/>
             </Routes>
 
             {/*<Products/>*/}
