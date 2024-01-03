@@ -10,8 +10,10 @@ import Accoount_page from "./layout/Shop/Accoount_page";
 import Checkout_page from "./layout/Shop/Checkout_page";
 import Review from "./Components/Template/Review";
 import ItemShow from "./Components/Template/Item_show";
-import ItemShowPage from "./layout/Shop/item_show_page";
-
+import StarRating from "./StarRating";
+// import ItemShowPage from "./layout/Shop/item_show_page";
+// import 'rsuite/dist/styles/rsuite-default.css';
+// import { Rate } from 'rsuite';
 export default function App() {
     return (
         <div>
@@ -30,6 +32,7 @@ export default function App() {
                 {/*<Route path="<ItemShowPage/>" element={<ItemShow/>}/>*/}
 
             </Routes>
+            <StarRating/>
             <Review/>
 
 
