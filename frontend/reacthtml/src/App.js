@@ -7,6 +7,10 @@ import Register from './layout/Shop/Register';
 import Profile from "./Components/User/Profile";
 import Products from "./layout/Shop/Products";
 import Accoount_page from "./layout/Shop/Accoount_page";
+import Checkout_page from "./layout/Shop/Checkout_page";
+import Review from "./Components/Template/Review";
+import ItemShow from "./Components/Template/Item_show";
+import ItemShowPage from "./layout/Shop/item_show_page";
 
 export default function App() {
     return (
@@ -18,12 +22,18 @@ export default function App() {
                 <Route path="/Login" element={<Signin_register/>}/>
                 <Route path="/Register" element={<Register/>}/>
                 <Route path="/Login page" element={<Signin_register/>}/>
-                <Route path="/users/:id" element={<Profile />}/>
-                <Route path="/products" element={<Products />}/>
+                <Route path="/users/:id" element={<Profile/>}/>
+                <Route path="/products" element={<Products/>}/>
                 <Route path="/My_Account" element={<Accoount_page/>}/>
-            </Routes>
+                <Route path="/Checkout" element={<Checkout_page/>}/>
+                <Route path="/shop-item.html" element={<ItemShow/>}/>
+                {/*<Route path="<ItemShowPage/>" element={<ItemShow/>}/>*/}
 
-            {/*<Products/>*/}
+            </Routes>
+            <Review/>
+
+
+
         </div>
     );
 }

@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    
     <div>
       <div className="header">
       <div className="container">
-        <li><Link to ="/Home"> <a className="site-logo" href="shop-index.html"><img src="assets/corporate/img/logos/logo-shop-red.png" alt="Metronic Shop UI"/></a></Link></li>
+        <Link to ="/Home"> <a className="site-logo" href="shop-index.html"><img src="assets/corporate/img/logos/logo-shop-red.png" alt="Metronic Shop UI"/></a></Link>
 
         <a href="javascript:void(0);" className="mobi-toggler"><i className="fa fa-bars"></i></a>
 
@@ -93,10 +92,10 @@ export default function Header() {
           <ul>
             <li className="dropdown">
               <a className="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Woman 
-                
+                Woman
+
               </a>
-                
+
               {/* <!-- BEGIN DROPDOWN MENU --> */}
               <ul className="dropdown-menu">
                 <li className="dropdown-submenu">
@@ -106,7 +105,7 @@ export default function Header() {
                     <li><a href="shop-product-list.html">Second Level Link</a></li>
                     <li className="dropdown-submenu">
                       <a className="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Second Level Link 
+                        Second Level Link
                         <i className="fa fa-angle-right"></i>
                       </a>
                       <ul className="dropdown-menu">
@@ -125,7 +124,7 @@ export default function Header() {
             <li className="dropdown dropdown-megamenu">
               <a className="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
                 Man
-                
+
               </a>
               <ul className="dropdown-menu">
                 <li>
@@ -189,7 +188,7 @@ export default function Header() {
             <li className="dropdown dropdown100 nav-catalogue">
               <a className="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
                 New
-                
+
               </a>
               <ul className="dropdown-menu">
                 <li>
@@ -242,10 +241,10 @@ export default function Header() {
             </li>
             <li className="dropdown active">
               <a className="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Pages 
-                
+                Pages
+
               </a>
-                
+
               <ul className="dropdown-menu">
                 <li><a href="shop-index.html">Home Default</a></li>
                 <li className="active"><a href="shop-index-header-fix.html">Home Header Fixed</a></li>
@@ -267,8 +266,8 @@ export default function Header() {
                 <li><a href="shop-terms-conditions-page.html">Terms &amp; Conditions</a></li>
               </ul>
             </li>
-            
-            
+
+
             <li><a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes&amp;utm_source=download&amp;utm_medium=banner&amp;utm_campaign=metronic_frontend_freebie" target="_blank">Admin theme</a></li>
 
             {/* <!-- BEGIN TOP SEARCH --> */}
@@ -284,7 +283,7 @@ export default function Header() {
                     </span>
                   </div>
                 </form>
-              </div> 
+              </div>
             </li>
             {/* <!-- END TOP SEARCH --> */}
           </ul>

@@ -48,7 +48,7 @@ export default function SaleProduct() {
                         <a href="#product-pop-up" className="btn btn-default fancybox-fast-view">View</a>
                       </div>
                     </div>
-                    <h3><a href="javascript:;">Berry Lace Dress4</a></h3>
+                    <h3><a href="shop-item.html">Berry Lace Dress4</a></h3>
                     <div className="pi-price">$29.00</div>
                     <a href="javascript:;" className="btn btn-default add2cart">Add to cart</a>
                     <div className="sticker sticker-new"></div>
